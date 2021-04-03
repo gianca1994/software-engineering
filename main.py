@@ -1,17 +1,15 @@
-import os
-
 from work import *
 
-from operations import create_dir
 
 def main():
-
     # Creamos la carpeta del proyecto
     create_project_dir()
+    # Creamos el app.py
+    create_app_file()
     # Creamos el directorio main
     create_main_dir()
     # Creamos los directorios secundarios dentro del main
-    create_seconds_directories()
+    create_secondary_dirs()
     # Creamos el readme
     create_readme()
     # Creamos el requeriments
@@ -24,8 +22,11 @@ def main():
     create_install()
     # Creamos el boot.sh
     create_boot()
-    
-    
+    # Creamos el decorators.py de la carpeta autenticacion
+    create_decorators_file()
+    # Creamos el routes.py de la carpeta autenticacion
+    create_routes_file()
+
+
 if __name__ == '__main__':
     main()
-
