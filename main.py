@@ -6,8 +6,8 @@ from operations import create_dir
 
 def main():
 
-    os.mkdir("app")
-
+    # Creamos la carpeta del proyecto
+    create_project_dir()
     # Creamos el directorio main
     create_main_dir()
     # Creamos los directorios secundarios dentro del main

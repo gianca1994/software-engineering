@@ -19,6 +19,9 @@ dicc_install = {"#!/bin/bash", "python3 -m venv .", "source bin/activate", "pip3
 
 main_route = "app"
 
+def create_project_dir():
+    create_dir("", main_route)
+
 def create_main_dir():
     name_dir = "main"
     route = main_route
