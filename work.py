@@ -17,34 +17,36 @@ dicc_boot = {"#!/bin/bash", "python3 app.py"}
 
 dicc_install = {"#!/bin/bash", "python3 -m venv .", "source bin/activate", "pip3 install -r requirements.txt"}
 
+main_route = "app"
+
 def create_main_dir():
     name_dir = "main"
-    route = "app"
+    route = main_route
     create_dir(route, name_dir)
 
 def create_seconds_directories():
-    route = "app/main"
+    route = main_route + "/" + "main"
     for seconds_dir in dicc_dirs:
         create_dir(route, seconds_dir)
 
 def create_boot():
-    name_file = "app/boot.sh"
+    name_file = main_route + "/" + "boot.sh"
     create_file(name_file, dicc_boot, True)
 
 def create_install():
-    name_file = "app/install.sh"
+    name_file = main_route + "/" + "install.sh"
     create_file(name_file, dicc_install, True)
 
 def create_requeriments():
-    name_file = "app/requeriments.txt"
+    name_file = main_route + "/" + "requeriments.txt"
     create_file(name_file, dict_requeriments, True)
 
 def create_readme():
-    name_file = "app/README.md"
+    name_file = main_route + "/" + "README.md"
     create_file(name_file, "flask", False)
 
 def create_pyvenv():
-    name_file = "app/pyvenv.cfg"
+    name_file = main_route + "/" + "pyvenv.cfg"
     create_file(name_file, dicc_pyvenv, True)
 
 def create_inits():
