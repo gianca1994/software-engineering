@@ -2,14 +2,15 @@ main_route = "app"
 
 dict_requeri = {"pylint", "pylint-flask", "flask", "python-dotenv",
                 "flask_restful", "flask_jwt_extended",
-                "flask_marshmallow", "Flask-Cors"}
+                "flask_marshmallow", "Flask-Cors", "hola"}
 
 dict_dirs = {"authentication", "models", "repository", "resources", "services", "templates"}
 
 dict_pyvenv = {"home = /usr/bin", "include-system-site-packages = false", "version = 3.8.5"}
 
-dict_inits = {"app/main/__init__.py", "app/main/models/__init__.py", "app/main/repository/__init__.py",
-              "app/main/resources/__init__.py", "app/main/services/__init__.py"}
+app_main = "app/main/"
+dict_inits = {app_main + "__init__.py", app_main + "models/__init__.py", app_main + "repository/__init__.py",
+              app_main + "resources/__init__.py", app_main + "services/__init__.py"}
 
 dict_init_auth = {"from .routes import auth as auth_blueprint", "from .decorators import admin_login_required"}
 
