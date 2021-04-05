@@ -5,18 +5,10 @@ import errno
 def create_dir(route_dir, name_dir):
     try:
         if len(route_dir) > 0:
-            create_seconds_dir(route_dir, name_dir)
+            os.mkdir(route_dir + "/" + name_dir)
         else:
             os.mkdir(name_dir)
 
-    except OSError as error:
-        if error.errno != errno.EEXIST:
-            raise
-
-
-def create_seconds_dir(main_route, name_dir):
-    try:
-        os.mkdir(main_route + "/" + name_dir)
     except OSError as error:
         if error.errno != errno.EEXIST:
             raise

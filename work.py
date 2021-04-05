@@ -52,7 +52,7 @@ def create_inits():
     for inits in dict_inits:
         create_file(inits, "", False)
 
-    name_init_auth = "app/main/authentication/__init__.py"
+    name_init_auth = main_route + "/main/authentication/__init__.py"
     create_file(name_init_auth, dict_init_auth, True)
 
 

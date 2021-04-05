@@ -1,3 +1,5 @@
+main_route = "app"
+
 dict_requeri = {"pylint", "pylint-flask", "flask", "python-dotenv",
                 "flask_restful", "flask_jwt_extended",
                 "flask_marshmallow", "Flask-Cors"}
@@ -14,8 +16,6 @@ dict_init_auth = {"from .routes import auth as auth_blueprint", "from .decorator
 dict_boot = {"#!/bin/bash", "python3 app.py"}
 
 dict_install = {"#!/bin/bash", "python3 -m venv .", "source bin/activate", "pip3 install -r requirements.txt"}
-
-main_route = "app"
 
 app_code = """app.py code:
 line 1

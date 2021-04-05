@@ -2,6 +2,7 @@ from work import *
 
 
 def main():
+
     # Creamos la carpeta del proyecto
     create_project_dir()
     # Creamos el app.py
