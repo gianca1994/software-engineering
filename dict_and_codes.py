@@ -1,22 +1,12 @@
 main_route = "app"
-
-dict_requeri = {"pylint", "pylint-flask", "flask", "python-dotenv",
-                "flask_restful", "flask_jwt_extended",
-                "flask_marshmallow", "Flask-Cors", "hola"}
-
-dict_dirs = {"authentication", "models", "repository", "resources", "services", "templates"}
-
-dict_pyvenv = {"home = /usr/bin", "include-system-site-packages = false", "version = 3.8.5"}
-
 app_main = "app/main/"
+
 dict_inits = {app_main + "__init__.py", app_main + "models/__init__.py", app_main + "repository/__init__.py",
               app_main + "resources/__init__.py", app_main + "services/__init__.py"}
 
-dict_init_auth = {"from .routes import auth as auth_blueprint", "from .decorators import admin_login_required"}
+dict_init_auth = {"from .routes import auth as auth_blueprint",
+                  "from .decorators import admin_login_required"}
 
-dict_boot = {"#!/bin/bash", "python3 app.py"}
-
-dict_install = {"#!/bin/bash", "python3 -m venv .", "source bin/activate", "pip3 install -r requirements.txt"}
 
 app_code = """app.py code:
 line 1

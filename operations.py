@@ -10,8 +10,7 @@ def create_dir(route_dir, name_dir):
             os.mkdir(name_dir)
 
     except OSError as error:
-        if error.errno != errno.EEXIST:
-            raise
+        print(error)
 
 
 def create_file(name_file, text, is_dict):
@@ -26,13 +25,11 @@ def create_file(name_file, text, is_dict):
                 create_text_files(file, i)
             file.close()
     except OSError as error:
-        if error.errno != errno.EEXIST:
-            raise
+        print(error)
 
 
 def create_text_files(file_name, text):
     try:
         file_name.write(text + "\n")
     except OSError as error:
-        if error.errno != errno.EEXIST:
-            raise
+        print(error)
