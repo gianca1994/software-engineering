@@ -1,5 +1,4 @@
 import os
-import errno
 from operations import create_dir
 from constants import EMPTY_PATH, ENTER_PROYECT_NAME, ERR_SPACE
 
@@ -17,7 +16,6 @@ def make_project():
     except OSError as error:
         print(error)
         make_project()
-
 
 
 switch = {

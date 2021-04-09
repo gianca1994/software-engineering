@@ -1,3 +1,11 @@
+DICT_MAKE_TABLES = {
+    "create table requeriments (id integer primary key autoincrement, name text)",
+    "create table dirs (id integer primary key autoincrement, name text)",
+    "create table installsh (id integer primary key autoincrement, name text)",
+    "create table bootsh (id integer primary key autoincrement, name text)",
+    "create table pyvenv (id integer primary key autoincrement, name text)"
+}
+
 DICT_REQ = {"pylint",
             "pylint-flask",
             "flask",
