@@ -20,6 +20,7 @@ switch = {
     3: "insert into installsh(name) values (?)",
     4: "insert into bootsh(name) values (?)",
     5: "insert into pyvenv(name) values (?)",
+    6: "insert into files(name) values (?)",
 }
 
 
