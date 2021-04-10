@@ -6,7 +6,8 @@ DICT_MAKE_TABLES = {
     "create table installsh (id integer primary key autoincrement, name text)",
     "create table bootsh (id integer primary key autoincrement, name text)",
     "create table pyvenv (id integer primary key autoincrement, name text)",
-    "create table files (id integer primary key autoincrement, name text)"
+    "create table files (id integer primary key autoincrement, name text)",
+    "create table db (id integer primary key autoincrement, name text)"
 }
 
 MAP_DB = {
@@ -16,6 +17,7 @@ MAP_DB = {
     4: "insert into bootsh(name) values (?)",
     5: "insert into pyvenv(name) values (?)",
     6: "insert into files(name) values (?)",
+    7: "insert into db(name) values (?)",
 }
 
 DICT_REQ = {"pylint",

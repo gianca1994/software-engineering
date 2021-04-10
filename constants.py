@@ -18,5 +18,9 @@ GIT_SWITCH = {
 ############### DATABASE ###############
 SELECT_DB = "Agregar base de datos [y/n]: "
 NAME_DB = "Nombre de la base de datos: "
-TYPE_DB = "Seleccione el tipo de base de datos | 1.MySQL | 2.SQlite |: "
+TYPE_DB = "Seleccione el tipo de base de datos | 1.SQlite | 2.MySQL |: "
+DB_SWITCH = {
+    1: ".db",
+    2: ".sql"
+}
 ############### FIN DATABASE ###############

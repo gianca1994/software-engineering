@@ -33,6 +33,16 @@ def get_file_db():
             data.append(file)
     return data
 
+def get_db_dict():
+    data = []
+    conn = connect()
+    cur = conn.cursor()
+    cur.execute("SELECT name FROM db")
+    rows = cur.fetchall()
+    for dbs in rows:
+        for db in dbs:
+            data.append(db)
+    return data
 
 MAP_GET_DB = {
     1: "SELECT * FROM requeriments",
@@ -41,6 +51,7 @@ MAP_GET_DB = {
     4: "SELECT * FROM bootsh",
     5: "SELECT * FROM pyvenv",
     6: "SELECT * FROM files",
+    7: "SELECT * FROM db",
 }
 
 

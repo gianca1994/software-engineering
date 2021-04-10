@@ -1,14 +1,18 @@
 from git import Repo
+
+from make.make_db import set_db
 from make.make_dirs import make_seconds_dirs
 from constants import COMMIT_MESSAGE
 from make.make_files import make_files
 from make_git_repo.setters_git import *
 
-def create_repo(repo_name):
+def make_repository(repo_name):
     repo = Repo.init(repo_name, mkdir=True)
 
     make_seconds_dirs(repo_name)
     make_files(repo_name)
+
+    set_db(repo_name)
 
     if set_confirm_push():
         user_git = set_user_git()

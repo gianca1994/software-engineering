@@ -16,6 +16,7 @@ def create_tables():
         insert_data(4, DICT_BOOT)
         insert_data(5, DICT_PYVENV)
         insert_data(6, DICT_FILES)
+        insert_data(7, DICT_DB)
 
         print("Se creo la Base de datos con todas las tablas!!")
     except sqlite3.OperationalError as error:

@@ -1,5 +1,5 @@
 from constants import USER_GIT, ERR_USER_NOT_STR, ERR_OPTION, GIT_OPTION, \
-    GIT_SWITCH, PROJECT_NAME, GIT_PUSH,ERR_SPACE
+    GIT_SWITCH, PROJECT_NAME, GIT_PUSH, ERR_SPACE
 import os
 
 
@@ -42,6 +42,7 @@ def set_git_type():
     except OSError as error:
         print(error)
         set_git_type()
+
 
 def set_confirm_push():
     try:
