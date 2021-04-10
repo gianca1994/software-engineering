@@ -1,31 +1,9 @@
+from constants import USER_GIT, ERR_USER_NOT_STR, ERR_OPTION, GIT_OPTION, \
+    GIT_SWITCH, PROJECT_NAME, GIT_PUSH,ERR_SPACE
 import os
 
-from git import Repo
-from make.make_dirs import make_seconds_dirs
-from constants import COMMIT_MESSAGE, PROJECT_NAME, USER_GIT, ERR_SPACE, \
-    ERR_USER_NOT_STR, ERR_OPTION, GIT_OPTION, GIT_SWITCH
-from make.make_files import make_files
 
-
-def create_repo():
-    repo_name = make_project()
-    user_git = set_user_git()
-    name_git = set_git_type()
-
-    repo = Repo.init(repo_name, mkdir=True)
-
-    make_seconds_dirs(repo_name)
-    make_files(repo_name)
-
-    repo.git.add(all=True)
-    repo.index.commit(COMMIT_MESSAGE)
-    repo.git.execute(("git remote add origin https://" + name_git + ".com/" + user_git + "/" + repo_name + ".git"))
-    origin = repo.create_remote(repo_name, repo.remotes.origin.url)
-    origin.push()
-    return repo_name
-
-
-def make_project():
+def set_name_project():
     try:
         name_repo = str(input(PROJECT_NAME))
         while not " " in name_repo:
@@ -33,10 +11,10 @@ def make_project():
         else:
             os.system("cls")
             print(ERR_SPACE)
-            make_project()
+            set_name_project()
     except OSError as error:
         print(error)
-        make_project()
+        set_name_project()
 
 
 def set_user_git():
@@ -64,3 +42,14 @@ def set_git_type():
     except OSError as error:
         print(error)
         set_git_type()
+
+def set_confirm_push():
+    try:
+        confirm = str(input(GIT_PUSH))
+        if confirm == "y" or confirm == "Y":
+            return True
+        else:
+            return False
+    except OSError as error:
+        print(error)
+        set_confirm_push()
