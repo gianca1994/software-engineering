@@ -1,4 +1,4 @@
-+ name_project/
+"""+ name_project/
    |_ app/
       |_ __init__.py
       |_ main/
@@ -31,3 +31,4 @@
    |_ boot.sh
    |_ pyvenv.cfg
    |_ README.md
+"""

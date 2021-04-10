@@ -3,7 +3,7 @@ import os
 
 def create_dir(route_dir, name_dir):
     try:
-        if len(route_dir) > 0 and route_dir is not None:
+        if len(route_dir) > 0:
             os.mkdir(route_dir + "/" + name_dir)
         else:
             os.mkdir(name_dir)

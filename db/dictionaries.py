@@ -1,3 +1,5 @@
+DB_FILE = "db/DataBase.db"
+
 DICT_MAKE_TABLES = {
     "create table requeriments (id integer primary key autoincrement, name text)",
     "create table dirs (id integer primary key autoincrement, name text)",
@@ -24,16 +26,14 @@ DICT_FILES = {"app",
               "pyvenv",
               "README"}
 
-DICT_DIRS = {"app",
-             "main",
-             "database",
-             "data",
-             "auth",
-             "models",
-             "repository",
-             "resources",
-             "services",
-             "templates"}
+DICT_DIRS = {"app/main/database",
+             "app/main/data",
+             "app/main/auth",
+             "app/main/models",
+             "app/main/repository",
+             "app/main/resources",
+             "app/main/services",
+             "app/main/templates"}
 
 DICT_INSTALL = {"#!/bin/bash",
                 "python3 -m venv .",

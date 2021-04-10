@@ -4,11 +4,11 @@ import sqlite3
 
 
 def create_tables():
-    connection = connect()
+    conn = connect()
 
     try:
         for i in DICT_MAKE_TABLES:
-            connection.execute(i)
+            conn.execute(i)
 
         insert_data(1, DICT_REQ)
         insert_data(2, DICT_DIRS)
@@ -20,15 +20,15 @@ def create_tables():
         print("Se creo la Base de datos con todas las tablas!!")
     except sqlite3.OperationalError:
         print("La Base de datos ya existe...")
-    connection.close()
+    conn.close()
 
 
 def set_data_db(opt, name2):
     name1 = map_set_db(opt)
-    connection = connect()
-    connection.execute(name1, (name2,))
-    connection.commit()
-    connection.close()
+    conn = connect()
+    conn.execute(name1, (name2,))
+    conn.commit()
+    conn.close()
 
 
 def insert_data(number, dictionary):

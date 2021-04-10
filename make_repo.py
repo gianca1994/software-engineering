@@ -6,10 +6,11 @@ from constants import COMMIT_MESSAGE, ENTER_PROYECT_NAME, EMPTY_PATH, ERR_SPACE,
 from operations import create_dir
 
 
-def create_repo(name_git):
+def create_repo():
     repo_name = make_project()
     user_git = set_user_git()
     name_git = set_git_type()
+
     repo = Repo.init(repo_name, mkdir=True)
     # ACA AGREGAMOS TODAS LAS CARPETAS Y ARCHIVOS AL REPO
     repo.git.execute("git add *")
@@ -57,7 +58,7 @@ GIT_SWITCH ={
 def set_git_type():
     opt = int(input(ENTER_NAME_GIT_OPTION))
     try:
-        if GIT_SWITCH.get(opt,) != None:
+        if GIT_SWITCH.get(opt,) is not None:
             return GIT_SWITCH.get(opt,)
         else:
             print(ERR_OPTION)
