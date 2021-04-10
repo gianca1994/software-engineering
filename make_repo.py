@@ -2,15 +2,14 @@ import os
 
 from git import Repo
 
-from constants import ENTER_PROYECT_NAME, EMPTY_PATH, ERR_SPACE
+from constants import COMMIT_MESSAGE, ENTER_PROYECT_NAME, EMPTY_PATH, ERR_SPACE, USER_GIT, ERR_USER_NOT_STR, ERR_OPTION, ENTER_NAME_GIT_OPTION
 from operations import create_dir
 
-COMMIT_MESSAGE = 'Initial commit'
 
-
-def create_repo(user_git, name_git):
+def create_repo(name_git):
     repo_name = make_project()
-
+    user_git = set_user_git()
+    name_git = set_git_type()
     repo = Repo.init(repo_name, mkdir=True)
     # ACA AGREGAMOS TODAS LAS CARPETAS Y ARCHIVOS AL REPO
     repo.git.execute("git add *")
@@ -36,7 +35,34 @@ def make_project():
 
 
 def set_user_git():
+    try:
+        user_git = input(USER_GIT)
+        while str in user_git:
+            return user_git
+        else:
+            os.system("cls")
+            print(ERR_USER_NOT_STR)
+            set_user_git()
+    except OSError as error:
+        print(error)
+        set_user_git()
+
+
+GIT_SWITCH ={
+    1: "gitlab",
+    2: "github"
+}
 
 
 def set_git_type():
-# Github o gitlab
+    opt = int(input(ENTER_NAME_GIT_OPTION))
+    try:
+        if GIT_SWITCH.get(opt,) != None:
+            return GIT_SWITCH.get(opt,)
+        else:
+            print(ERR_OPTION)
+            set_git_type()        
+    except OSError as error:
+        print(error)
+        set_git_type()
+

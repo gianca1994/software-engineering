@@ -8,10 +8,14 @@ CFG_EXTENSION = ".cfg"
 SH_EXTENSION = ".sh"
 ############### FIN EXTENSIONES ###############
 
-################# Crear carpeta del proyecto #################
+################# REPOSITORIO #################
+COMMIT_MESSAGE = 'Initial commit'
 ENTER_PROYECT_NAME = "Ingrese el nombre del proyecto: "
 ERR_SPACE = "El repositorio no puede contener espacios..."
-############### FIN Crear carpeta del proyecto ###############
+ERR_USER_NOT_STR = "Tipo de usuario no valido"
+ERR_OPTION = "Opcion ingresada invalida"
+ENTER_NAME_GIT_OPTION = "Ingrese opcion deseada 1. gitlab | 2. github: "
+############### FIN REPOSITORIO ###############
 
 ################# Crear requerimientos del proyecto #################
 NAME_REQUERIMENTS = "requeriments" + TXT_EXTENSION
