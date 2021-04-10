@@ -15,7 +15,7 @@ DICT_REQ = {"pylint",
             "flask_marshmallow",
             "Flask-Cors"}
 
-DICT_DIRS = {"authentication",
+DICT_DIRS = {"auth",
              "models",
              "repository",
              "resources",
