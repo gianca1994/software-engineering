@@ -18,7 +18,6 @@ def create_tables():
         insert_data(6, DICT_FILES)
         insert_data(7, DICT_DB)
 
-        print("Se creo la Base de datos con todas las tablas!!")
     except sqlite3.OperationalError as error:
         print(error)
     conn.close()
