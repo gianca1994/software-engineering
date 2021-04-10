@@ -2,8 +2,17 @@ from dict_and_codes import *
 from operations import *
 
 
+
+
+
+
+
+
+
+
+"""
 def create_project_dir():
-    create_dir("", main_route)
+    create_dir(None, main_route)
 
 
 def create_main_dir():
@@ -64,3 +73,4 @@ def create_decorators_file():
 def create_routes_file():
     name_file = main_route + "/main/authentication/" + "routes.py"
     create_file(name_file, routes_code, False)
+"""

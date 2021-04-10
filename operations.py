@@ -1,29 +1,22 @@
 import os
-import errno
 
 
 def create_dir(route_dir, name_dir):
     try:
-        if len(route_dir) > 0:
+        if len(route_dir) > 0 and route_dir is not None:
             os.mkdir(route_dir + "/" + name_dir)
         else:
             os.mkdir(name_dir)
-
     except OSError as error:
         print(error)
 
 
-def create_file(name_file, text, is_dict):
+def create_file(name_file, text_file):
     try:
         file = open(name_file, "w")
-
-        if not is_dict:
-            create_text_files(file, text)
-            file.close()
-        else:
-            for i in text:
-                create_text_files(file, i)
-            file.close()
+        for i in text_file:
+            create_text_files(file, i)
+        file.close()
     except OSError as error:
         print(error)
 

@@ -15,6 +15,4 @@ ERR_SPACE = "El repositorio no puede contener espacios..."
 
 ################# Crear requerimientos del proyecto #################
 NAME_REQUERIMENTS = "requeriments" + TXT_EXTENSION
-ENTER_PROYECT_NAME = "Ingrese el nombre del proyecto: "
-ERR_SPACE = "El repositorio no puede contener espacios..."
 ############### FIN Crear requerimientos del proyecto ###############
