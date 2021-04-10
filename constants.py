@@ -1,20 +1,26 @@
 EMPTY_PATH = ""
 
-################# EXTENSIONES #################
-TXT_EXTENSION = ".txt"
-PYTHON_EXTENSION = ".py"
-MD_EXTENSION = ".md"
-CFG_EXTENSION = ".cfg"
-SH_EXTENSION = ".sh"
-############### FIN EXTENSIONES ###############
-
-################# Crear carpeta del proyecto #################
-ENTER_PROYECT_NAME = "Ingrese el nombre del proyecto: "
+################# REPOSITORIO #################
+COMMIT_MESSAGE = 'Initial commit'
+PROJECT_NAME = "Ingrese el nombre del proyecto: "
 ERR_SPACE = "El repositorio no puede contener espacios..."
-############### FIN Crear carpeta del proyecto ###############
+ERR_USER_NOT_STR = "Tipo de usuario no valido"
+ERR_OPTION = "Opcion ingresada invalida"
+GIT_OPTION = "Ingrese opcion deseada 1. gitlab | 2. github: "
+USER_GIT = "Ingrese el usuario de Git: "
+GIT_PUSH = "Subir el repositorio a la nube (y/n): "
+GIT_SWITCH = {
+    1: "gitlab",
+    2: "github"
+}
+############### FIN REPOSITORIO ###############
 
-################# Crear requerimientos del proyecto #################
-NAME_REQUERIMENTS = "requeriments" + TXT_EXTENSION
-ENTER_PROYECT_NAME = "Ingrese el nombre del proyecto: "
-ERR_SPACE = "El repositorio no puede contener espacios..."
-############### FIN Crear requerimientos del proyecto ###############
+############### DATABASE ###############
+SELECT_DB = "Agregar base de datos [y/n]: "
+NAME_DB = "Nombre de la base de datos: "
+TYPE_DB = "Seleccione el tipo de base de datos | 1.SQlite | 2.MySQL |: "
+DB_SWITCH = {
+    1: ".db",
+    2: ".sql"
+}
+############### FIN DATABASE ###############

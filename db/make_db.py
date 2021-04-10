@@ -1,23 +1,41 @@
-from db.set_db import insert_data
 from db.connect_db import connect
 from db.dictionaries import *
 import sqlite3
 
 
 def create_tables():
-    connection = connect()
+    conn = connect()
 
     try:
         for i in DICT_MAKE_TABLES:
-            connection.execute(i)
+            conn.execute(i)
 
         insert_data(1, DICT_REQ)
-        insert_data(2, DICT_DIRS)
+        insert_data(2, DICT_SECOND_DIRS)
         insert_data(3, DICT_INSTALL)
         insert_data(4, DICT_BOOT)
         insert_data(5, DICT_PYVENV)
+        insert_data(6, DICT_FILES)
+        insert_data(7, DICT_DB)
 
         print("Se creo la Base de datos con todas las tablas!!")
-    except sqlite3.OperationalError:
-        print("La Base de datos ya existe...")
-    connection.close()
+    except sqlite3.OperationalError as error:
+        print(error)
+    conn.close()
+
+
+def set_data_db(opt, name2):
+    name1 = map_set_db(opt)
+    conn = connect()
+    conn.execute(name1, (name2,))
+    conn.commit()
+    conn.close()
+
+
+def insert_data(number, dictionary):
+    for i in dictionary:
+        set_data_db(number, i)
+
+
+def map_set_db(opt):
+    return MAP_DB.get(opt, "nothing")
