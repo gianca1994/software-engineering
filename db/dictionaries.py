@@ -6,6 +6,7 @@ DICT_MAKE_TABLES = {
     "create table pyvenv (id integer primary key autoincrement, name text)"
 }
 
+
 DICT_REQ = {"pylint",
             "pylint-flask",
             "flask",
@@ -15,7 +16,18 @@ DICT_REQ = {"pylint",
             "flask_marshmallow",
             "Flask-Cors"}
 
-DICT_DIRS = {"app", 
+
+DICT_FILES = {"app",
+              "requirements",
+              ".gitignore",
+              ".env",
+              "install",
+              "boot",
+              "pyvenv",
+              "README"}
+
+
+DICT_DIRS = {"app",
              "main",
              "database",
              "data",
