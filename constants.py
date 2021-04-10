@@ -8,6 +8,7 @@ ERR_USER_NOT_STR = "Tipo de usuario no valido"
 ERR_OPTION = "Opcion ingresada invalida"
 GIT_OPTION = "Ingrese opcion deseada 1. gitlab | 2. github: "
 USER_GIT = "Ingrese el usuario de Git: "
+GIT_PUSH = "Subir el repositorio a la nube (y/n): "
 GIT_SWITCH = {
     1: "gitlab",
     2: "github"
@@ -17,5 +18,9 @@ GIT_SWITCH = {
 ############### DATABASE ###############
 SELECT_DB = "Agregar base de datos [y/n]: "
 NAME_DB = "Nombre de la base de datos: "
-TYPE_DB = "Seleccione el tipo de base de datos | 1.MySQL | 2.SQlite |: "
+TYPE_DB = "Seleccione el tipo de base de datos | 1.SQlite | 2.MySQL |: "
+DB_SWITCH = {
+    1: ".db",
+    2: ".sql"
+}
 ############### FIN DATABASE ###############

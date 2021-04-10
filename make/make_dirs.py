@@ -1,4 +1,4 @@
-from db.get_db import get_dir_db
+from db.get_db import get_dir_db, get_db_dict
 
 import os
 
@@ -6,8 +6,14 @@ import os
 def make_seconds_dirs(project_name):
     create_dir(project_name, "/app")
     create_dir(project_name, "/app/main")
+
     for dir in get_dir_db():
         create_dir(project_name, dir)
+
+
+def make_database_dir(project_name):
+    for db in get_db_dict():
+        create_dir(project_name, db)
 
 
 def create_dir(route_dir, name_dir):
