@@ -9,15 +9,30 @@ def select_show_db(opt):
     for row in rows:
         print(row)
 
+
 def get_dir_db():
     data = []
     conn = connect()
     cur = conn.cursor()
-    for i in range(11):
-        dirs = cur.execute("SELECT name FROM dirs WHERE id=?", (i,))
-        for index, dir in enumerate(dirs):
-            data.append(dir[index])
+    cur.execute("SELECT name FROM dirs")
+    rows = cur.fetchall()
+    for dirs in rows:
+        for dir in dirs:
+            data.append(dir)
     return data
+
+
+def get_file_db():
+    data = []
+    conn = connect()
+    cur = conn.cursor()
+    cur.execute("SELECT name FROM files")
+    rows = cur.fetchall()
+    for files in rows:
+        for file in files:
+            data.append(file)
+    return data
+
 
 MAP_GET_DB = {
     1: "SELECT * FROM requeriments",

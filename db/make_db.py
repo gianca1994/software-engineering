@@ -11,7 +11,7 @@ def create_tables():
             conn.execute(i)
 
         insert_data(1, DICT_REQ)
-        insert_data(2, DICT_DIRS)
+        insert_data(2, DICT_SECOND_DIRS)
         insert_data(3, DICT_INSTALL)
         insert_data(4, DICT_BOOT)
         insert_data(5, DICT_PYVENV)

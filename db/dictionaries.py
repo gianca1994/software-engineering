@@ -5,7 +5,8 @@ DICT_MAKE_TABLES = {
     "create table dirs (id integer primary key autoincrement, name text)",
     "create table installsh (id integer primary key autoincrement, name text)",
     "create table bootsh (id integer primary key autoincrement, name text)",
-    "create table pyvenv (id integer primary key autoincrement, name text)"
+    "create table pyvenv (id integer primary key autoincrement, name text)",
+    "create table files (id integer primary key autoincrement, name text)"
 }
 
 DICT_REQ = {"pylint",
@@ -35,14 +36,15 @@ DICT_FILES = {"app.py",
               "/app/main/services/__init__.py",
               "/app/main/templates/index.html"}
 
-DICT_DIRS = {"/app/main/database",
-             "/app/main/data",
-             "/app/main/auth",
-             "/app/main/models",
-             "/app/main/repository",
-             "/app/main/resources",
-             "/app/main/services",
-             "/app/main/templates"}
+DICT_SECOND_DIRS = {"/app/main/auth",
+                    "/app/main/models",
+                    "/app/main/repository",
+                    "/app/main/resources",
+                    "/app/main/services",
+                    "/app/main/templates"}
+
+DICT_DB = {"/app/main/database",
+           "/app/main/data"}
 
 DICT_INSTALL = {"#!/bin/bash",
                 "python3 -m venv .",

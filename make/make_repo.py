@@ -1,10 +1,11 @@
 import os
 
 from git import Repo
+from make.make_dirs import make_seconds_dirs
+from constants import COMMIT_MESSAGE, PROJECT_NAME, USER_GIT, ERR_SPACE, \
+    ERR_USER_NOT_STR, ERR_OPTION, GIT_OPTION, GIT_SWITCH
+from make.make_files import make_files
 
-from constants import COMMIT_MESSAGE, ENTER_PROYECT_NAME, USER_GIT, EMPTY_PATH, ERR_SPACE, ERR_USER_NOT_STR, ERR_OPTION, ENTER_NAME_GIT_OPTION
-from operations import create_dir
-from work import *
 
 def create_repo():
     repo_name = make_project()
@@ -14,6 +15,7 @@ def create_repo():
     repo = Repo.init(repo_name, mkdir=True)
 
     make_seconds_dirs(repo_name)
+    make_files(repo_name)
 
     repo.git.add(all=True)
     repo.index.commit(COMMIT_MESSAGE)
@@ -25,7 +27,7 @@ def create_repo():
 
 def make_project():
     try:
-        name_repo = str(input(ENTER_PROYECT_NAME))
+        name_repo = str(input(PROJECT_NAME))
         while not " " in name_repo:
             return name_repo
         else:
@@ -51,21 +53,14 @@ def set_user_git():
         set_user_git()
 
 
-GIT_SWITCH ={
-    1: "gitlab",
-    2: "github"
-}
-
-
 def set_git_type():
-    opt = int(input(ENTER_NAME_GIT_OPTION))
+    opt = int(input(GIT_OPTION))
     try:
-        if GIT_SWITCH.get(opt,) is not None:
-            return GIT_SWITCH.get(opt,)
+        if GIT_SWITCH.get(opt, ) is not None:
+            return GIT_SWITCH.get(opt, )
         else:
             print(ERR_OPTION)
-            set_git_type()        
+            set_git_type()
     except OSError as error:
         print(error)
         set_git_type()
-
