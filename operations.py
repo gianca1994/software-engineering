@@ -9,7 +9,14 @@ def create_dir(route_dir, name_dir):
             os.mkdir(name_dir)
     except OSError as error:
         print(error)
-
+"""
+app_code = app.py code:
+line 1
+line 2
+line 3
+line ....
+line n
+"""
 
 def create_file(name_file, text_file):
     try:
