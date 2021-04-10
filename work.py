@@ -2,22 +2,25 @@ from dict_and_codes import *
 from operations import *
 from db.get_db import get_dir_db
 
-def create_project_dir(name_proyect):
-    os.mkdir(name_proyect)
+
+def make_seconds_dirs(name_proyect):
+
     os.mkdir(name_proyect + "/app")
     os.mkdir(name_proyect + "/app/main")
+
     for dir in get_dir_db():
         os.mkdir(name_proyect + dir)
 
 
-
-
-
-
-
 """
-def create_project_dir():
-    create_dir(None, main_route)
+def create_requeriments(name_proyect):
+    name_file = (name_proyect + "/" + "requeriments.txt")
+    create_file(name_file, "hola")
+
+
+def create_readme(name_proyect):
+    name_file = (name_proyect + "/" + "README.md")
+    create_file(name_file, "hola")
 
 
 def create_main_dir():

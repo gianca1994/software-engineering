@@ -2,9 +2,9 @@ import os
 
 from git import Repo
 
-from constants import COMMIT_MESSAGE, ENTER_PROYECT_NAME, EMPTY_PATH, ERR_SPACE, USER_GIT, ERR_USER_NOT_STR, ERR_OPTION, ENTER_NAME_GIT_OPTION
+from constants import COMMIT_MESSAGE, ENTER_PROYECT_NAME, USER_GIT, EMPTY_PATH, ERR_SPACE, ERR_USER_NOT_STR, ERR_OPTION, ENTER_NAME_GIT_OPTION
 from operations import create_dir
-
+from work import *
 
 def create_repo():
     repo_name = make_project()
@@ -12,8 +12,10 @@ def create_repo():
     name_git = set_git_type()
 
     repo = Repo.init(repo_name, mkdir=True)
-    # ACA AGREGAMOS TODAS LAS CARPETAS Y ARCHIVOS AL REPO
-    repo.git.execute("git add *")
+
+    make_seconds_dirs(repo_name)
+
+    repo.git.add(all=True)
     repo.index.commit(COMMIT_MESSAGE)
     repo.git.execute(("git remote add origin https://" + name_git + ".com/" + user_git + "/" + repo_name + ".git"))
     origin = repo.create_remote(repo_name, repo.remotes.origin.url)
@@ -38,7 +40,7 @@ def make_project():
 def set_user_git():
     try:
         user_git = input(USER_GIT)
-        while str in user_git:
+        if str(user_git):
             return user_git
         else:
             os.system("cls")

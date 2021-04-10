@@ -15,6 +15,7 @@ ERR_SPACE = "El repositorio no puede contener espacios..."
 ERR_USER_NOT_STR = "Tipo de usuario no valido"
 ERR_OPTION = "Opcion ingresada invalida"
 ENTER_NAME_GIT_OPTION = "Ingrese opcion deseada 1. gitlab | 2. github: "
+USER_GIT = "Ingrese el usuario de Git: "
 ############### FIN REPOSITORIO ###############
 
 ################# Crear requerimientos del proyecto #################

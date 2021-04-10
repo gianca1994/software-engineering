@@ -5,8 +5,7 @@ from work import *
 
 def main():
     create_tables()
-    create_project_dir(create_repo())
-
+    create_repo()
 
 if __name__ == '__main__':
     main()
