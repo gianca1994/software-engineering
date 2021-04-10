@@ -18,9 +18,10 @@ line ....
 line n
 """
 
-def create_file(name_file, text_file):
+def create_file(name_dir,name_file, text_file):
     try:
-        file = open(name_file, "w")
+        ruta = (name_dir + "/" + name_file)
+        file = open(ruta, "w")
         for i in text_file:
             create_text_files(file, i)
         file.close()
