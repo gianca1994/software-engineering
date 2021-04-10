@@ -13,3 +13,9 @@ GIT_SWITCH = {
     2: "github"
 }
 ############### FIN REPOSITORIO ###############
+
+############### DATABASE ###############
+SELECT_DB = ""
+NAME_DB = ""
+TYPE_DB = ""
+############### FIN DATABASE ###############
