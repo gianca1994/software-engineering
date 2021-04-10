@@ -9,6 +9,15 @@ DICT_MAKE_TABLES = {
     "create table files (id integer primary key autoincrement, name text)"
 }
 
+MAP_DB = {
+    1: "insert into requeriments(name) values (?)",
+    2: "insert into dirs(name) values (?)",
+    3: "insert into installsh(name) values (?)",
+    4: "insert into bootsh(name) values (?)",
+    5: "insert into pyvenv(name) values (?)",
+    6: "insert into files(name) values (?)",
+}
+
 DICT_REQ = {"pylint",
             "pylint-flask",
             "flask",

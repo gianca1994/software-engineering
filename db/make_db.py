@@ -18,8 +18,8 @@ def create_tables():
         insert_data(6, DICT_FILES)
 
         print("Se creo la Base de datos con todas las tablas!!")
-    except sqlite3.OperationalError:
-        print("La Base de datos ya existe...")
+    except sqlite3.OperationalError as error:
+        print(error)
     conn.close()
 
 
@@ -36,15 +36,5 @@ def insert_data(number, dictionary):
         set_data_db(number, i)
 
 
-switch = {
-    1: "insert into requeriments(name) values (?)",
-    2: "insert into dirs(name) values (?)",
-    3: "insert into installsh(name) values (?)",
-    4: "insert into bootsh(name) values (?)",
-    5: "insert into pyvenv(name) values (?)",
-    6: "insert into files(name) values (?)",
-}
-
-
 def map_set_db(opt):
-    return switch.get(opt, "nothing")
+    return MAP_DB.get(opt, "nothing")
