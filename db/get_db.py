@@ -33,6 +33,7 @@ def get_file_db():
             data.append(file)
     return data
 
+
 def get_db_dict():
     data = []
     conn = connect()
@@ -43,6 +44,7 @@ def get_db_dict():
         for db in dbs:
             data.append(db)
     return data
+
 
 MAP_GET_DB = {
     1: "SELECT * FROM requeriments",

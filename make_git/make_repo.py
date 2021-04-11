@@ -7,6 +7,7 @@ from make.make_dirs import make_seconds_dirs
 from constants.constants_globals import COMMIT_MESSAGE, PUSH_OK, EXIST_REPO, GIT_PUSH, CHECK_YES_NO, USER_GIT, \
     ERR_USER_NOT_STR, GIT_OPTION, GIT_SWITCH, ERR_OPTION, PROJECT_NAME, ERR_SPACE
 from make.make_files import make_files
+from service.setting import clear_os
 
 from service.translate import txt_print
 
@@ -43,7 +44,7 @@ def set_name_project(language):
         make_repository(name_repo, language)
         break
     else:
-        os.system("cls")
+        clear_os()
         txt_print(language, ERR_SPACE, False)
         set_name_project(language)
 
@@ -65,7 +66,7 @@ def set_user_git(language):
         if str(user_git):
             return user_git
         else:
-            os.system("cls")
+            clear_os()
             txt_print(language, ERR_USER_NOT_STR, True)
     except OSError as error:
         txt_print(language, error, False)
