@@ -1,6 +1,6 @@
 from service.translate import select_lenguage
 from service.setting import check_db_created
-from make_git.setters_git import set_name_project
+from make_git.make_repo import set_name_project
 
 
 def main():
