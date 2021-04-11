@@ -6,6 +6,7 @@ USER_GIT = 'Enter the Git username: '
 GIT_PUSH = 'Upload the repository to the cloud '
 GIT_SWITCH = {1: 'gitlab', 2: 'github'}
 ERR_SPACE = 'Repository cannot contain spaces.'
+EXIST_REPO = 'There is already a repository created with that same name!'
 ERR_USER_NOT_STR = 'Invalid user type.'
 ERR_OPTION = 'Option entered invalid.'
 PUSH_OK = 'Repository uploaded successfully!!'
