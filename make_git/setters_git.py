@@ -2,21 +2,19 @@ from constants.constants_globals import USER_GIT, ERR_USER_NOT_STR, ERR_OPTION, 
     GIT_SWITCH, PROJECT_NAME, GIT_PUSH, ERR_SPACE, CHECK_YES_NO
 import os
 
+from make_git.make_repo import make_repository
 from service.translate import txt_print
 
 
 def set_name_project(language):
-    try:
-        name_repo = str(input(txt_print(language, PROJECT_NAME, True)))
+    name_repo = str(input(txt_print(language, PROJECT_NAME, True)))
 
-        while not " " in name_repo:
-            return name_repo
-        else:
-            os.system("cls")
-            txt_print(language, ERR_SPACE, False)
-            set_name_project(language)
-    except OSError as error:
-        txt_print(language, error, False)
+    while not " " in name_repo:
+        make_repository(name_repo, language)
+        break
+    else:
+        os.system("cls")
+        txt_print(language, ERR_SPACE, False)
         set_name_project(language)
 
 
@@ -28,10 +26,8 @@ def set_user_git(language):
         else:
             os.system("cls")
             txt_print(language, ERR_USER_NOT_STR, True)
-            set_user_git(language)
     except OSError as error:
         txt_print(language, error, False)
-        set_user_git(language)
 
 
 def set_git_type(language):
@@ -41,10 +37,8 @@ def set_git_type(language):
             return GIT_SWITCH.get(opt, )
         else:
             txt_print(language, ERR_OPTION, False)
-            set_git_type(language)
     except OSError as error:
         txt_print(language, error, False)
-        set_git_type(language)
 
 
 def set_confirm_push(language):
@@ -56,4 +50,3 @@ def set_confirm_push(language):
             return False
     except OSError as error:
         txt_print(language, error, False)
-        set_confirm_push(language)

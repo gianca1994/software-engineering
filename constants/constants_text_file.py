@@ -1,5 +1,3 @@
-
-
 ############# REPOSITORIO ##################
 DIC_ENV = """
 
@@ -18,16 +16,14 @@ web/css/*
 web/js/*
 web/uploads/*
 """
-DIC_APP = """
-if __name__ == '__main__':
+DIC_APP = """if __name__ == '__main__':
     app.run()
 """
 ############# FIN REPOSITORIO ##############
 
 
 ################# APP ######################
-APP_INIT = """
-from flask import Flask
+APP_INIT = """from flask import Flask
 
 app = Flask(__name__)
 
@@ -37,8 +33,7 @@ app.run(debug=True)
 
 
 ################# MAIN ##################
-MAIN_INIT = """
-from flask import Blueprint
+MAIN_INIT = """from flask import Blueprint
 
 admin_bp = Blueprint('admin', __name__, template_folder='templates')
 
@@ -48,8 +43,7 @@ from . import routes
 
 
 ############### AUTH ###################
-AUTH_INIT = """
-from flask import Blueprint
+AUTH_INIT = """from flask import Blueprint
 
 auth_bp = Blueprint('auth', __name__, template_folder='templates')
 
@@ -85,8 +79,7 @@ SERVICES_INIT = """
 
 
 ############### TEMPLATES###################
-TEMPLATES_INDEX = """
-<!DOCTYPE html>
+TEMPLATES_INDEX = """<!DOCTYPE html>
 <html>
     <body>
 
