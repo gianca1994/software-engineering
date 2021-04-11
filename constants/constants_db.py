@@ -20,6 +20,16 @@ MAP_DB = {
     7: "insert into db(name) values (?)",
 }
 
+MAP_GET_DB = {
+    1: "SELECT * FROM dirs",
+    2: "SELECT * FROM files",
+    3: "SELECT * FROM requeriments",
+    4: "SELECT * FROM installsh",
+    5: "SELECT * FROM bootsh",
+    6: "SELECT * FROM pyvenv",
+    7: "SELECT * FROM db",
+}
+
 DICT_REQ = {"pylint",
             "pylint-flask",
             "flask",

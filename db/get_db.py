@@ -1,4 +1,9 @@
+from constants.constants_db import MAP_GET_DB
 from db.connect_db import connect
+
+
+def map_get_db(opt):
+    return MAP_GET_DB.get(opt,)
 
 
 def select_show_db(opt):
@@ -33,6 +38,7 @@ def get_file_db():
             data.append(file)
     return data
 
+
 def get_db_dict():
     data = []
     conn = connect()
@@ -43,17 +49,3 @@ def get_db_dict():
         for db in dbs:
             data.append(db)
     return data
-
-MAP_GET_DB = {
-    1: "SELECT * FROM requeriments",
-    2: "SELECT * FROM dirs",
-    3: "SELECT * FROM installsh",
-    4: "SELECT * FROM bootsh",
-    5: "SELECT * FROM pyvenv",
-    6: "SELECT * FROM files",
-    7: "SELECT * FROM db",
-}
-
-
-def map_get_db(opt):
-    return MAP_GET_DB.get(opt, "nothing")
