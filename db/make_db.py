@@ -1,9 +1,9 @@
 from db.connect_db import connect
-from db.dictionaries import *
+from constants.constants_db import *
 import sqlite3
 
 
-def create_tables():
+def create_db_tables():
     conn = connect()
 
     try:
