@@ -1,6 +1,6 @@
 import sqlite3
 
-from db.dictionaries import DB_FILE
+from constants.constants_db import DB_FILE
 
 
 def connect():

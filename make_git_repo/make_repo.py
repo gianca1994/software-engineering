@@ -2,10 +2,10 @@ from git import Repo
 
 from make.make_db import set_db
 from make.make_dirs import make_seconds_dirs
-from constants import COMMIT_MESSAGE
+from constants.constants_globals import COMMIT_MESSAGE, PUSH_OK
 from make.make_files import make_files
 from make_git_repo.setters_git import *
-from translate import txt_print
+
 
 def make_repository(repo_name, language):
     repo = Repo.init(repo_name, mkdir=True)
@@ -19,8 +19,9 @@ def make_repository(repo_name, language):
         user_git = set_user_git(language)
         type_git = set_git_type(language)
         repo.git.add(all=True)
-        repo.index.commit(print(txt_print(language, COMMIT_MESSAGE)))
-        repo.git.execute(("git remote add origin https://" + type_git + ".com/" + user_git + "/" + repo_name + ".git"))
+        repo.index.commit(COMMIT_MESSAGE)
+        repo.git.execute("git remote add origin https://" + type_git + ".com/" + user_git + "/" + repo_name + ".git")
         origin = repo.create_remote(repo_name, repo.remotes.origin.url)
         origin.push()
+        print("\n" + txt_print(language, PUSH_OK, True) + f' User: {user_git} | Link: https://{type_git}.com/{user_git}/{repo_name}')
     return repo_name
