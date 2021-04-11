@@ -1,6 +1,6 @@
 import os
 
-from db.make_db import create_db_tables
+from db.make_tables_db import create_db_tables
 
 
 def check_db_created():
