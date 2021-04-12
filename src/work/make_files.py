@@ -1,4 +1,4 @@
-from db.get_db import get_data_db
+from src.db.get_db import get_data_db
 
 
 def make_files(project_name):

@@ -1,6 +1,7 @@
 from textblob import TextBlob
 
-from constants.constants_globals import MAP_LANGUAGE, SELECT_LANGUAGE
+from src.service.constants import Messages, Map
+from src.service.mapper import mapping
 
 
 def txt_print(translate, text, check_input):
@@ -19,11 +20,7 @@ def txt_print(translate, text, check_input):
             print(msg)
 
 
-def map_get_db(opt):
-    return MAP_LANGUAGE.get(opt, "nothing")
-
-
-def select_lenguage():
-    opt = int(input(SELECT_LANGUAGE))
-    selected_lang = map_get_db(opt)
+def select_language():
+    opt = int(input(Messages.SELECT_LANGUAGE))
+    selected_lang = mapping(Map.MAP_LANGUAGE, opt)
     return selected_lang
