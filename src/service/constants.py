@@ -64,6 +64,7 @@ class Database:
 
 class Messages:
     ################# REPOSITORIO #################
+    REPOSITORY_PATH = "repositories/"
     COMMIT_MESSAGE = 'Initial commit'
     PROJECT_NAME = 'Enter the name of the project: '
     GIT_OPTION = 'Enter desired option 1. gitlab | 2. github: '
