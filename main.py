@@ -1,7 +1,7 @@
-from db.get_db import select_show_db
-from service.translate import select_lenguage
-from service.setting import check_db_created, delete_created_db
-from make_git.make_repo import set_name_project
+"""from db.get_db import select_show_db"""
+from src.service.translate import select_language
+from src.service.utilities import check_db_created, delete_created_db
+from src.repository.make_repo import set_name_project
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
     """
 
     check_db_created()
-    language = select_lenguage()
+    language = select_language()
     set_name_project(language)
     delete_created_db()
 

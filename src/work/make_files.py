@@ -1,8 +1,8 @@
-from db.get_db import get_file_db
+from src.db.get_db import get_data_db
 
 
 def make_files(project_name):
-    for file in get_file_db():
+    for file in get_data_db(2):
         create_file(project_name, file, )
 
 
