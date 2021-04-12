@@ -10,12 +10,12 @@ def create_db_tables():
         for i in DICT_MAKE_TABLES:
             conn.execute(i)
 
-        insert_data(1, DICT_REQ)
-        insert_data(2, DICT_SECOND_DIRS)
-        insert_data(3, DICT_INSTALL)
-        insert_data(4, DICT_BOOT)
-        insert_data(5, DICT_PYVENV)
-        insert_data(6, DICT_FILES)
+        insert_data(1, DICT_SECOND_DIRS)
+        insert_data(2, DICT_FILES)
+        insert_data(3, DICT_REQ)
+        insert_data(4, DICT_INSTALL)
+        insert_data(5, DICT_BOOT)
+        insert_data(6, DICT_PYVENV)
         insert_data(7, DICT_DB)
 
     except sqlite3.OperationalError as error:

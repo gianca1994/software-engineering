@@ -1,51 +1,30 @@
-from constants.constants_db import MAP_GET_DB
+from constants.constants_db import MAP_GET_DB, MAP_GET_NAMES_DB
 from db.connect_db import connect
 
 
-def map_get_db(opt):
-    return MAP_GET_DB.get(opt,)
+def map_get_db(opt, get_specific):
+    if get_specific:
+        return MAP_GET_NAMES_DB.get(opt, )
+    else:
+        return MAP_GET_DB.get(opt, )
 
 
 def select_show_db(opt):
     conn = connect()
     cur = conn.cursor()
-    cur.execute(map_get_db(opt))
+    cur.execute(map_get_db(opt, False))
     rows = cur.fetchall()
     for row in rows:
         print(row)
 
 
-def get_dir_db():
+def get_data_db(opt):
     data = []
     conn = connect()
     cur = conn.cursor()
-    cur.execute("SELECT name FROM dirs")
+    cur.execute(map_get_db(opt, True))
     rows = cur.fetchall()
-    for dirs in rows:
-        for dir in dirs:
-            data.append(dir)
-    return data
-
-
-def get_file_db():
-    data = []
-    conn = connect()
-    cur = conn.cursor()
-    cur.execute("SELECT name FROM files")
-    rows = cur.fetchall()
-    for files in rows:
-        for file in files:
-            data.append(file)
-    return data
-
-
-def get_db_dict():
-    data = []
-    conn = connect()
-    cur = conn.cursor()
-    cur.execute("SELECT name FROM db")
-    rows = cur.fetchall()
-    for dbs in rows:
-        for db in dbs:
-            data.append(db)
+    for row in rows:
+        for dat in row:
+            data.append(dat)
     return data

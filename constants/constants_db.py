@@ -1,23 +1,29 @@
 DB_FILE = "db/DataBase.db"
 
 DICT_MAKE_TABLES = {
-    "create table requeriments (id integer primary key autoincrement, name text)",
     "create table dirs (id integer primary key autoincrement, name text)",
+    "create table files (id integer primary key autoincrement, name text)",
+    "create table requeriments (id integer primary key autoincrement, name text)",
     "create table installsh (id integer primary key autoincrement, name text)",
     "create table bootsh (id integer primary key autoincrement, name text)",
     "create table pyvenv (id integer primary key autoincrement, name text)",
-    "create table files (id integer primary key autoincrement, name text)",
     "create table db (id integer primary key autoincrement, name text)"
 }
 
 MAP_DB = {
-    1: "insert into requeriments(name) values (?)",
-    2: "insert into dirs(name) values (?)",
-    3: "insert into installsh(name) values (?)",
-    4: "insert into bootsh(name) values (?)",
-    5: "insert into pyvenv(name) values (?)",
-    6: "insert into files(name) values (?)",
-    7: "insert into db(name) values (?)",
+    1: "insert into dirs(name) values (?)",
+    2: "insert into files(name) values (?)",
+    3: "insert into requeriments(name) values (?)",
+    4: "insert into installsh(name) values (?)",
+    5: "insert into bootsh(name) values (?)",
+    6: "insert into pyvenv(name) values (?)",
+    7: "insert into db(name) values (?)"
+}
+
+MAP_GET_NAMES_DB = {
+    1: "SELECT name FROM dirs",
+    2: "SELECT name FROM files",
+    7: "SELECT name FROM db"
 }
 
 MAP_GET_DB = {
@@ -27,7 +33,7 @@ MAP_GET_DB = {
     4: "SELECT * FROM installsh",
     5: "SELECT * FROM bootsh",
     6: "SELECT * FROM pyvenv",
-    7: "SELECT * FROM db",
+    7: "SELECT * FROM db"
 }
 
 DICT_REQ = {"pylint",
