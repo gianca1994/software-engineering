@@ -84,7 +84,7 @@ class Messages:
     ############### FIN DATABASE ###############
 
     ################# LANGUAGE #################
-    SELECT_LANGUAGE = "Select language [1- ingles | 2- español | 3- frances | 4- japones]: "
+    SELECT_LANGUAGE = "Select language [1- ingles | 2- español | 3- frances | 4- japones | 5- aleman | 6- italiano | 7- portugues | 8- ruso | 9- chino | 10- holandes]: "
     CHECK_YES_NO = " [y/n]: "
     ############### FIN LANGUAGE ###############
 
@@ -130,7 +130,13 @@ class Map:
         1: '',
         2: 'es',
         3: 'fr',
-        4: 'ja'
+        4: 'ja',
+        5: 'de',
+        6: 'it',
+        7: 'pt',
+        8: 'ru',
+        9: 'zh',
+        10: 'nl'
     }
 
     PLATAFORM_OS = {
