@@ -64,6 +64,7 @@ class Database:
 
 class Messages:
     ################# REPOSITORIO #################
+    REPOSITORY_PATH = "repositories/"
     COMMIT_MESSAGE = 'Initial commit'
     PROJECT_NAME = 'Enter the name of the project: '
     GIT_OPTION = 'Enter desired option 1. gitlab | 2. github: '
@@ -83,13 +84,13 @@ class Messages:
     ############### FIN DATABASE ###############
 
     ################# LANGUAGE #################
-    SELECT_LANGUAGE = "Select language [1- ingles | 2- español | 3- frances | 4- japones]: "
+    SELECT_LANGUAGE = "Language [1-English | 2-Spanish | 3-French | 4-Japanese | 5-German | 6-Italian | 7-Portuguese | 8-Russian | 9-Chinese | 10-Dutch]: "
     CHECK_YES_NO = " [y/n]: "
     ############### FIN LANGUAGE ###############
 
 
 class Map:
-    MAP_DB = {
+    INSERT_DB_MAP = {
         1: "insert into dirs(name) values (?)",
         2: "insert into files(name) values (?)",
         3: "insert into requeriments(name) values (?)",
@@ -99,13 +100,13 @@ class Map:
         7: "insert into db(name) values (?)"
     }
 
-    MAP_GET_NAMES_DB = {
+    NAMES_DB_MAP = {
         1: "SELECT name FROM dirs",
         2: "SELECT name FROM files",
         7: "SELECT name FROM db"
     }
 
-    MAP_GET_DB = {
+    ALL_DB_MAP = {
         1: "SELECT * FROM dirs",
         2: "SELECT * FROM files",
         3: "SELECT * FROM requeriments",
@@ -115,24 +116,30 @@ class Map:
         7: "SELECT * FROM db"
     }
 
-    GIT_SWITCH = {
+    GIT_MAP = {
         1: 'gitlab',
         2: 'github'
     }
 
-    DB_SWITCH = {
+    DB_MAP = {
         1: '.db',
         2: '.sql'
     }
 
-    MAP_LANGUAGE = {
+    LANGUAGE_MAP = {
         1: '',
         2: 'es',
         3: 'fr',
-        4: 'ja'
+        4: 'ja',
+        5: 'de',
+        6: 'it',
+        7: 'pt',
+        8: 'ru',
+        9: 'zh',
+        10: 'nl'
     }
 
-    PLATAFORM_OS = {
+    PLATAFORM_MAP = {
         "Linux": 'Clear',
         "Windows": 'cls',
         "Darwin": 'Clear'

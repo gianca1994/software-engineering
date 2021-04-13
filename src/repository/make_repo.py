@@ -14,12 +14,12 @@ from src.service.translate import txt_print
 
 
 def make_repository(repo_name, language):
-    repo_path = "repositories/"
-    if not os.path.isdir(repo_path + repo_name):
-        repo = Repo.init(repo_path + repo_name, mkdir=True)
-        make_seconds_dirs(repo_path + repo_name)
-        make_files(repo_path + repo_name)
-        set_db(repo_path + repo_name, language)
+    path = Messages.REPOSITORY_PATH
+    if not os.path.isdir(path + repo_name):
+        repo = Repo.init(path + repo_name, mkdir=True)
+        make_seconds_dirs(path + repo_name)
+        make_files(path + repo_name)
+        set_db(path + repo_name, language)
 
         if set_confirm_push(language):
             user_git = set_user_git(language)
@@ -28,7 +28,7 @@ def make_repository(repo_name, language):
             repo.index.commit(Messages.COMMIT_MESSAGE)
             repo.git.execute(
                 "git remote add origin https://" + type_git + ".com/" + user_git + "/" + repo_name + ".git")
-            origin = repo.create_remote(repo_path + repo_name, repo.remotes.origin.url)
+            origin = repo.create_remote(path + repo_name, repo.remotes.origin.url)
             origin.push()
             print('\n')
             print(txt_print(language, Messages.PUSH_OK,
@@ -77,8 +77,8 @@ def set_user_git(language):
 def set_git_type(language):
     opt = int(input(txt_print(language, Messages.GIT_OPTION, True)))
     try:
-        if mapping(Map.GIT_SWITCH, opt) is not None:
-            return mapping(Map.GIT_SWITCH, opt)
+        if mapping(Map.GIT_MAP, opt) is not None:
+            return mapping(Map.GIT_MAP, opt)
         else:
             txt_print(language, Messages.ERR_OPTION, False)
     except OSError as error:
