@@ -90,7 +90,7 @@ class Messages:
 
 
 class Map:
-    MAP_DB = {
+    INSERT_DB_MAP = {
         1: "insert into dirs(name) values (?)",
         2: "insert into files(name) values (?)",
         3: "insert into requeriments(name) values (?)",
@@ -100,13 +100,13 @@ class Map:
         7: "insert into db(name) values (?)"
     }
 
-    MAP_GET_NAMES_DB = {
+    NAMES_DB_MAP = {
         1: "SELECT name FROM dirs",
         2: "SELECT name FROM files",
         7: "SELECT name FROM db"
     }
 
-    MAP_GET_DB = {
+    ALL_DB_MAP = {
         1: "SELECT * FROM dirs",
         2: "SELECT * FROM files",
         3: "SELECT * FROM requeriments",
@@ -116,17 +116,17 @@ class Map:
         7: "SELECT * FROM db"
     }
 
-    GIT_SWITCH = {
+    GIT_MAP = {
         1: 'gitlab',
         2: 'github'
     }
 
-    DB_SWITCH = {
+    DB_MAP = {
         1: '.db',
         2: '.sql'
     }
 
-    MAP_LANGUAGE = {
+    LANGUAGE_MAP = {
         1: '',
         2: 'es',
         3: 'fr',
@@ -139,7 +139,7 @@ class Map:
         10: 'nl'
     }
 
-    PLATAFORM_OS = {
+    PLATAFORM_MAP = {
         "Linux": 'Clear',
         "Windows": 'cls',
         "Darwin": 'Clear'

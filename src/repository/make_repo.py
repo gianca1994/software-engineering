@@ -77,8 +77,8 @@ def set_user_git(language):
 def set_git_type(language):
     opt = int(input(txt_print(language, Messages.GIT_OPTION, True)))
     try:
-        if mapping(Map.GIT_SWITCH, opt) is not None:
-            return mapping(Map.GIT_SWITCH, opt)
+        if mapping(Map.GIT_MAP, opt) is not None:
+            return mapping(Map.GIT_MAP, opt)
         else:
             txt_print(language, Messages.ERR_OPTION, False)
     except OSError as error:

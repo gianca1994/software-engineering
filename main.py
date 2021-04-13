@@ -5,7 +5,7 @@ from src.repository.make_repo import set_name_project
 
 
 def main():
-    """ #TEXTEO, TODAVIA NO IMPLEMENTAR...
+    """ #TESTEO, TODAVIA NO IMPLEMENTAR...
         opt = int(input("1. Create project | 2. View/Edit DataBase: "))
         if opt == 1:
             set_name_project(language)

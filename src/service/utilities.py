@@ -22,4 +22,4 @@ def delete_created_db():
 
 
 def clear_os():
-    os.system(mapping(Map.PLATAFORM_OS, platform.system()))
+    os.system(mapping(Map.PLATAFORM_MAP, platform.system()))

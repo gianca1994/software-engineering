@@ -22,5 +22,5 @@ def txt_print(translate, text, check_input):
 
 def select_language():
     opt = int(input(Messages.SELECT_LANGUAGE))
-    selected_lang = mapping(Map.MAP_LANGUAGE, opt)
+    selected_lang = mapping(Map.LANGUAGE_MAP, opt)
     return selected_lang

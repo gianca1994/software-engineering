@@ -30,7 +30,7 @@ def insert_data(number, dictionary):
 
 
 def set_data_db(opt, content_inset):
-    table_insert = mapping(Map.MAP_DB, opt)
+    table_insert = mapping(Map.DB_MAP, opt)
     conn = connect()
     conn.execute(table_insert, (content_inset,))
     conn.commit()

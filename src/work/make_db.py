@@ -25,8 +25,8 @@ def set_name_db(repo_name, language):
 def set_type_db(repo_name, name_db, language):
     try:
         type_db = int(input(txt_print(language, Messages.TYPE_DB, True)))
-        if mapping(Map.DB_SWITCH, type_db) is not None:
-            type_db = mapping(Map.DB_SWITCH, type_db)
+        if mapping(Map.DB_MAP, type_db) is not None:
+            type_db = mapping(Map.DB_MAP, type_db)
             make_db(repo_name, name_db + type_db)
     except OSError as error:
         txt_print(language, error, False)

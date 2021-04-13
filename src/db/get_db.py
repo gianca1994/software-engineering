@@ -16,7 +16,7 @@ def get_data_db(opt):
     data = []
     conn = connect()
     cur = conn.cursor()
-    cur.execute(mapping(Map.MAP_GET_NAMES_DB, opt))
+    cur.execute(mapping(Map.NAMES_DB_MAP, opt))
     rows = cur.fetchall()
     for row in rows:
         for dat in row:
