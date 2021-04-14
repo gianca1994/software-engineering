@@ -84,7 +84,8 @@ class Messages:
     ############### FIN DATABASE ###############
 
     ################# LANGUAGE #################
-    SELECT_LANGUAGE = "Language [1-English | 2-Spanish | 3-French | 4-Japanese | 5-German | 6-Italian | 7-Portuguese | 8-Russian | 9-Chinese | 10-Dutch]: "
+    SELECT_LANGUAGE = "Language [1-English | 2-Spanish | 3-French | 4-Japanese | 5-German " \
+                      "| 6-Italian | 7-Portuguese | 8-Russian | 9-Chinese | 10-Dutch]: "
     CHECK_YES_NO = " [y/n]: "
     ############### FIN LANGUAGE ###############
 
