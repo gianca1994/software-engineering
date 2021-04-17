@@ -29,40 +29,45 @@ def make_repository(repo_name):
     to the stage, commit it, link the initialized repository with the existing one in the cloud
     and finally push it to the cloud.
     """
+    try:
+        path = Repository.REPOSITORY_PATH
+        repository = path + repo_name
 
-    path = Repository.REPOSITORY_PATH
-    repository = path + repo_name
+        if not os.path.isdir(repository):
+            repo = init_repository(repository)
 
-    if not os.path.isdir(repository):
-        repo = init_repository(repository)
+            if set_confirm_push():
+                user_git, type_git = set_user_git(), set_git_type()
 
-        if set_confirm_push():
-            user_git, type_git = set_user_git(), set_git_type()
+                repo.git.add(all=True)
+                repo.index.commit(Messages.COMMIT_MESSAGE)
 
-            repo.git.add(all=True)
-            repo.index.commit(Messages.COMMIT_MESSAGE)
+                repo.git.execute(
+                    "git remote add origin https://" + type_git + ".com/"
+                    + user_git + "/" + repo_name + ".git")
 
-            repo.git.execute(
-                "git remote add origin https://" + type_git + ".com/"
-                + user_git + "/" + repo_name + ".git")
-
-            origin = repo.create_remote(repository, repo.remotes.origin.url)
-            origin.push()
-            print("\n")
-            print(translate(Messages.PUSH_OK) + f' User: {user_git} | '
-                                                f'Link: https://{type_git}.com/{user_git}/{repo_name}')
-    else:
-        print(translate(Messages.EXIST_REPO))
-        set_name_project()
+                origin = repo.create_remote(repository, repo.remotes.origin.url)
+                origin.push()
+                print("\n")
+                print(translate(Messages.PUSH_OK) + f' User: {user_git} | '
+                                                    f'Link: https://{type_git}.com/{user_git}/{repo_name}')
+        else:
+            print(translate(Messages.EXIST_REPO))
+            set_name_project()
+    except OSError as error:
+        print(translate(error))
 
 
 def init_repository(repository):
-    repo = Repo.init(repository, mkdir=True)
-    make_seconds_dirs(repository)
-    make_files(repository)
-    set_db(repository)
-    set_include_venv(repository)
-    return repo
+    try:
+        repo = Repo.init(repository, mkdir=True)
+        make_seconds_dirs(repository)
+        make_files(repository)
+        set_db(repository)
+        set_include_venv(repository)
+        return repo
+    except OSError as error:
+        print(translate(error))
 
 
 def set_name_project():
@@ -72,15 +77,18 @@ def set_name_project():
     spaces the repository name will be saved, if it contains spaces an error message
     will be printed and the repository name without spaces will be asked again.
     """
-    name_repo = str(input(translate(Messages.PROJECT_NAME)))
+    try:
+        name_repo = str(input(translate(Messages.PROJECT_NAME)))
 
-    while not " " in name_repo:
-        make_repository(name_repo, )
-        break
-    else:
-        clear_os()
-        print(translate(Messages.ERR_SPACE))
-        set_name_project()
+        while not " " in name_repo:
+            make_repository(name_repo, )
+            break
+        else:
+            clear_os()
+            print(translate(Messages.ERR_SPACE))
+            set_name_project()
+    except OSError as error:
+        print(translate(error))
 
 
 def set_confirm_push():
