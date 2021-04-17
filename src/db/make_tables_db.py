@@ -23,8 +23,7 @@ def create_db_tables():
         insert_data(3, Database.DICT_REQ)
         insert_data(4, Database.DICT_INSTALL)
         insert_data(5, Database.DICT_BOOT)
-        insert_data(6, Database.DICT_PYVENV)
-        insert_data(7, Database.DICT_DB)
+        insert_data(6, Database.DICT_DB)
 
     except sqlite3.OperationalError as error:
         print(error)

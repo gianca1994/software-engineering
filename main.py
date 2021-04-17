@@ -1,7 +1,8 @@
 """from db.get_db import select_show_db"""
-from src.service.translate import select_language
-from src.service.utilities import check_repo_dir_exist, check_db_created, delete_created_db
 from src.repository.make_repo import set_name_project
+from src.service.constants import Config
+from src.service.translate import select_language
+from src.service.utilities import check_existence_repo_db, delete_created_db
 
 
 def main():
@@ -20,10 +21,10 @@ def main():
             if 3 >= opt > 0:
                 select_show_db(opt)
     """
-    check_repo_dir_exist()
-    check_db_created()
-    language = select_language()
-    set_name_project(language)
+
+    check_existence_repo_db()
+    Config.LANGUAGE = select_language()
+    set_name_project()
     delete_created_db()
 
 

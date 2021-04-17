@@ -1,3 +1,13 @@
+class Config:
+    LANGUAGE = None
+
+class Venv:
+    VENV_NAME = "venv"
+
+class Repository:
+    REPOSITORY_PATH = "repositories/"
+
+
 class Database:
     DB_FILE = "DataBase.db"
     DB_PATH = "src/db/"
@@ -8,7 +18,6 @@ class Database:
         "create table requeriments (id integer primary key autoincrement, name text)",
         "create table installsh (id integer primary key autoincrement, name text)",
         "create table bootsh (id integer primary key autoincrement, name text)",
-        "create table pyvenv (id integer primary key autoincrement, name text)",
         "create table db (id integer primary key autoincrement, name text)"
     }
 
@@ -27,7 +36,6 @@ class Database:
                   ".env",
                   "install.sh",
                   "boot.sh",
-                  "pyvenv.cfg",
                   "README.md",
                   "/app/__init__.py",
                   "/app/main/__init__.py",
@@ -57,19 +65,14 @@ class Database:
     DICT_BOOT = {"#!/bin/bash",
                  "python3 app.py"}
 
-    DICT_PYVENV = {"home = /usr/bin",
-                   "include-system-site-packages = false",
-                   "version = 3.8.5"}
-
 
 class Messages:
     ################# REPOSITORIO #################
-    REPOSITORY_PATH = "repositories/"
     COMMIT_MESSAGE = 'Initial commit'
     PROJECT_NAME = 'Enter the name of the project: '
     GIT_OPTION = 'Enter desired option 1. gitlab | 2. github: '
     USER_GIT = 'Enter the Git username: '
-    GIT_PUSH = 'Upload the repository to the cloud '
+    GIT_PUSH = 'Upload the repository to the cloud'
     ERR_SPACE = 'Repository cannot contain spaces.'
     EXIST_REPO = 'There is already a repository created with that same name!'
     ERR_USER_NOT_STR = 'Invalid user type.'
@@ -78,7 +81,7 @@ class Messages:
     ############### FIN REPOSITORIO ###############
 
     ############### DATABASE ###############
-    SELECT_DB = 'Add database '
+    SELECT_DB = 'Add database'
     NAME_DB = 'Database name: '
     TYPE_DB = 'Select the type of database | 1.SQlite | 2.MySQL : '
     ############### FIN DATABASE ###############
@@ -89,6 +92,12 @@ class Messages:
     CHECK_YES_NO = " [y/n]: "
     ############### FIN LANGUAGE ###############
 
+    ############### VENV ###############
+    ADD_VENV = 'Include the virtual environment in your project'
+    VENV_INSTALLING = "Installing the virtual environment..."
+    VENV_INSTALLED = "The virtual environment was created successfully!"
+    ############### FIN VENV ###############
+
 
 class Map:
     INSERT_DB_MAP = {
@@ -97,14 +106,13 @@ class Map:
         3: "insert into requeriments(name) values (?)",
         4: "insert into installsh(name) values (?)",
         5: "insert into bootsh(name) values (?)",
-        6: "insert into pyvenv(name) values (?)",
-        7: "insert into db(name) values (?)"
+        6: "insert into db(name) values (?)"
     }
 
     NAMES_DB_MAP = {
         1: "SELECT name FROM dirs",
         2: "SELECT name FROM files",
-        7: "SELECT name FROM db"
+        6: "SELECT name FROM db"
     }
 
     ALL_DB_MAP = {
@@ -113,8 +121,7 @@ class Map:
         3: "SELECT * FROM requeriments",
         4: "SELECT * FROM installsh",
         5: "SELECT * FROM bootsh",
-        6: "SELECT * FROM pyvenv",
-        7: "SELECT * FROM db"
+        6: "SELECT * FROM db"
     }
 
     GIT_MAP = {
@@ -140,10 +147,16 @@ class Map:
         10: 'nl'
     }
 
-    PLATAFORM_MAP = {
-        "Linux": 'Clear',
+    OS_CLEAR_MAP = {
+        "Linux": 'clear',
         "Windows": 'cls',
-        "Darwin": 'Clear'
+        "Darwin": 'clear'
+    }
+
+    OS_COMMAND_MAP = {
+        "Linux": 'python3',
+        "Windows": 'py',
+        "Darwin": 'python3'
     }
 
 
