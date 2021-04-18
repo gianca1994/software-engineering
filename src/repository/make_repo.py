@@ -59,7 +59,14 @@ def make_repository(repo_name):
 
 
 def init_repository(repository):
-    # TODO: Documentation
+    """
+    Function that receives by parameter the complete path + the name of the
+    repository that the user chose and initializes the repository, then creates
+    all the folders that go inside, as well as the files. It calls the function
+    "set_db", which decides whether to create the database or not and finally
+    calls the function "set_include_venv" which decides whether to install the
+    virtual environment.
+    """
     try:
         repo = Repo.init(repository, mkdir=True)
         make_seconds_dirs(repository)
@@ -140,7 +147,12 @@ def set_git_type():
 
 
 def set_include_venv(repository):
-    # TODO: Document
+    """
+    Function to ask the user if he wants to install the virtual environment in the
+    repository folder, if the answer is affirmative, the function "make_venv" is
+    called and we pass as parameter the path of the repository and the name where
+    it should be installed.
+    """
     try:
         include = str(input(translate(Messages.ADD_VENV) + Messages.CHECK_YES_NO))
         if include == "y" or include == "Y":

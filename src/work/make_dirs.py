@@ -2,9 +2,6 @@ import os
 
 from src.db.get_db import get_data_db
 
-"""def make_sec_dirs(project_name, map):
-    print("HOLA")"""
-
 
 def make_seconds_dirs(project_name):
     """
