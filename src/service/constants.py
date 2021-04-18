@@ -1,8 +1,14 @@
 class Config:
     LANGUAGE = None
 
+
 class Venv:
     VENV_NAME = "venv"
+
+
+class Gitignore:
+    PYTHON = "venv/"
+
 
 class Repository:
     REPOSITORY_PATH = "repositories/"
@@ -21,49 +27,58 @@ class Database:
         "create table db (id integer primary key autoincrement, name text)"
     }
 
-    DICT_REQ = {"pylint",
-                "pylint-flask",
-                "flask",
-                "python-dotenv",
-                "flask_restful",
-                "flask_jwt_extended",
-                "flask_marshmallow",
-                "Flask-Cors"}
-
-    DICT_FILES = {"app.py",
-                  "requirements.txt",
-                  ".gitignore",
-                  ".env",
-                  "install.sh",
-                  "boot.sh",
-                  "README.md",
-                  "/app/__init__.py",
-                  "/app/main/__init__.py",
-                  "/app/main/auth/__init__.py",
-                  "/app/main/models/__init__.py",
-                  "/app/main/repository/__init__.py",
-                  "/app/main/resources/__init__.py",
-                  "/app/main/resources/user.py",
-                  "/app/main/services/__init__.py",
-                  "/app/main/templates/index.html"}
-
-    DICT_SECOND_DIRS = {"/app/main/auth",
-                        "/app/main/models",
-                        "/app/main/repository",
-                        "/app/main/resources",
-                        "/app/main/services",
-                        "/app/main/templates"}
-
-    DICT_DB = {"/app/main/database",
-               "/app/main/data"}
-
-    DICT_INSTALL = {"#!/bin/bash",
-                    "python3 -m venv .",
-                    "source bin/activate",
-                    "pip3 install -r requirements.txt"}
-
-    DICT_BOOT = {"#!/bin/bash",
-                 "python3 app.py"}
+    DICT_CONTENT_TABLES = {
+        "SECOND_DIRS": (
+            "/app/main/auth",
+            "/app/main/models",
+            "/app/main/repository",
+            "/app/main/resources",
+            "/app/main/services",
+            "/app/main/templates"
+        ),
+        "FILES": (
+            "app.py",
+            "requirements.txt",
+            ".gitignore",
+            ".env",
+            "install.sh",
+            "boot.sh",
+            "README.md",
+            "/app/__init__.py",
+            "/app/main/__init__.py",
+            "/app/main/auth/__init__.py",
+            "/app/main/models/__init__.py",
+            "/app/main/repository/__init__.py",
+            "/app/main/resources/__init__.py",
+            "/app/main/resources/user.py",
+            "/app/main/services/__init__.py",
+            "/app/main/templates/index.html"
+        ),
+        "REQ": (
+            "pylint",
+            "pylint-flask",
+            "flask",
+            "python-dotenv",
+            "flask_restful",
+            "flask_jwt_extended",
+            "flask_marshmallow",
+            "Flask-Cors"
+        ),
+        "INSTALL": (
+            "#!/bin/bash",
+            "python3 app.py"
+        ),
+        "BOOT": (
+            "#!/bin/bash",
+            "python3 -m venv .",
+            "source bin/activate",
+            "pip3 install -r requirements.txt"
+        ),
+        "DB": (
+            "/app/main/data",
+            "/app/main/database"
+        )
+    }
 
 
 class Messages:
@@ -101,12 +116,12 @@ class Messages:
 
 class Map:
     INSERT_DB_MAP = {
-        1: "insert into dirs(name) values (?)",
-        2: "insert into files(name) values (?)",
-        3: "insert into requeriments(name) values (?)",
-        4: "insert into installsh(name) values (?)",
-        5: "insert into bootsh(name) values (?)",
-        6: "insert into db(name) values (?)"
+        "SECOND_DIRS": "insert into dirs(name) values (?)",
+        "FILES": "insert into files(name) values (?)",
+        "REQ": "insert into requeriments(name) values (?)",
+        "INSTALL": "insert into installsh(name) values (?)",
+        "BOOT": "insert into bootsh(name) values (?)",
+        "DB": "insert into db(name) values (?)"
     }
 
     NAMES_DB_MAP = {

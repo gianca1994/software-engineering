@@ -1,4 +1,4 @@
-from src.service.constants import Messages, Map
+from src.service.constants import Messages, Map, Database
 from src.service.mapper import mapping
 from src.service.translate import translate
 from src.work.make_dirs import make_database_dir
@@ -13,7 +13,7 @@ def set_db(repo_name):
     """
     try:
         opt = str(input((translate(Messages.SELECT_DB) + Messages.CHECK_YES_NO)))
-        if opt == "y" or opt == "Y":
+        if opt.lower() == "y":
             set_name_db(repo_name)
     except OSError as error:
         print(translate(error))
@@ -59,6 +59,13 @@ def make_db(repo_name, name_db):
     """
     try:
         make_database_dir(repo_name)
-        create_file(repo_name + "/app/main/data", name_db)
+        make_files_db(repo_name, name_db)
     except OSError as error:
         print(translate(error))
+
+
+def make_files_db(repo_name, name_db):
+    # TODO: Document
+    py_db = "database.py"
+    create_file(repo_name + Database.DICT_CONTENT_TABLES["DB"][0], name_db)
+    create_file(repo_name + Database.DICT_CONTENT_TABLES["DB"][1], py_db)

@@ -59,6 +59,7 @@ def make_repository(repo_name):
 
 
 def init_repository(repository):
+    # TODO: Documentation
     try:
         repo = Repo.init(repository, mkdir=True)
         make_seconds_dirs(repository)
@@ -139,6 +140,7 @@ def set_git_type():
 
 
 def set_include_venv(repository):
+    # TODO: Document
     try:
         include = str(input(translate(Messages.ADD_VENV) + Messages.CHECK_YES_NO))
         if include == "y" or include == "Y":
