@@ -17,6 +17,7 @@ def check_existence_repo_db():
     if not os.path.isdir(Repository.REPOSITORY_PATH):
         os.mkdir(Repository.REPOSITORY_PATH)
 
+    delete_created_db()
     if not os.path.isfile(Database.DB_PATH + Database.DB_FILE):
         create_db_tables()
 

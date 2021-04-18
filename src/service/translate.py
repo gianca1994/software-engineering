@@ -21,10 +21,10 @@ def translate(msg):
 
 def select_language():
     """
-    Function to select the language to be used in the whole program, we return
+    Function to select the language to be used in the whole program, we set
     the result taking as input the language that the user chose.
     """
     try:
-        return mapping(Map.LANGUAGE_MAP, int(input(Messages.SELECT_LANGUAGE)))
+        Config.LANGUAGE = mapping(Map.LANGUAGE_MAP, int(input(Messages.SELECT_LANGUAGE)))
     except OSError as error:
         print(translate(error))
