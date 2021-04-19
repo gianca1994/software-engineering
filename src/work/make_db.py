@@ -65,7 +65,12 @@ def make_db(repo_name, name_db):
 
 
 def make_files_db(repo_name, name_db):
-    # TODO: Document
+    """
+    Function that receives by parameter the name of the repository and the name that
+    the user chose for the db, we declare by default "py_db = "database.py"", then we
+    create the 2 files, the database file that the user chose + the extension that he
+    chose and the "database.py" in the 2 default folders.
+    """
     py_db = "database.py"
     create_file(repo_name + Database.DICT_CONTENT_TABLES["DB"][0], name_db)
     create_file(repo_name + Database.DICT_CONTENT_TABLES["DB"][1], py_db)
