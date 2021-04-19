@@ -113,6 +113,9 @@ class Messages:
     VENV_INSTALLED = "The virtual environment was created successfully!"
     ############### FIN VENV ###############
 
+    ################# TERMINAR Y SALIR #################
+    FINISH_AND_CLOSE = "Press a key to finish..."
+    ############### FIN TERMINAR Y SALIR ###############
 
 class Map:
     INSERT_DB_MAP = {
