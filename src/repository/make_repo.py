@@ -51,6 +51,8 @@ def make_repository(repo_name):
                 print("\n")
                 print(translate(Messages.PUSH_OK) + f' User: {user_git} | '
                                                     f'Link: https://{type_git}.com/{user_git}/{repo_name}')
+                print("\n")
+                input(Messages.FINISH_AND_CLOSE)
         else:
             print(translate(Messages.EXIST_REPO))
             set_name_project()
