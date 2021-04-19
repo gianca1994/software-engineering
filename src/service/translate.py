@@ -1,26 +1,30 @@
 from textblob import TextBlob
 
-from src.service.constants import Messages, Map
+from src.service.constants import Messages, Map, Config
 from src.service.mapper import mapping
 
 
-def txt_print(translate, text, check_input):
-    msg = TextBlob(text)
-
-    if len(translate) > 0:
-        msg_translate = msg.translate(from_lang='en', to=translate)
-        if check_input:
-            return msg_translate
+def translate(msg):
+    """
+    This function is used to receive a message as a parameter and if the constant
+    'Config.LANGUAGE' is not none, then the message is translated into the language
+    that contains said constant, but the message is returned with the language that came.
+    """
+    try:
+        if Config.LANGUAGE is not None:
+            return TextBlob(msg).translate(to=Config.LANGUAGE)
         else:
-            print(msg_translate)
-    else:
-        if check_input:
             return msg
-        else:
-            print(msg)
+    except OSError as error:
+        print(error)
 
 
 def select_language():
-    opt = int(input(Messages.SELECT_LANGUAGE))
-    selected_lang = mapping(Map.LANGUAGE_MAP, opt)
-    return selected_lang
+    """
+    Function to select the language to be used in the whole program, we set
+    the result taking as input the language that the user chose.
+    """
+    try:
+        Config.LANGUAGE = mapping(Map.LANGUAGE_MAP, int(input(Messages.SELECT_LANGUAGE)))
+    except OSError as error:
+        print(translate(error))
